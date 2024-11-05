@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sole Guard Alliance</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #333333;
+      }
+
+      .logo-circle img {
+        width: 40px;
+        height: 40px;
+        border: 2px solid #333;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-link {
+        color: #333;
+        font-weight: 500;
+        padding: 8px 16px;
+      }
+
+      .contact-btn {
+        background: #0096ff;
+        color: white;
+        padding: 8px 24px;
+        border-radius: 24px;
+        font-weight: 500;
+      }
+
+      .stats-card {
+        background: #fbf7ea;
+        padding: 20px;
+        border-radius: 12px;
+        min-width: 120px;
+        height: 120px;
+        text-align: center;
+        display: grid;
+        place-items: center;
+      }
+
+      @media (max-width: 768px) {
+        #overview-section {
+          flex-direction: column-reverse;
+          gap: 24px;
+        }
+      }
+
+      .stats-card:nth-of-type(2) {
+        background: hsl(220, 29%, 55%);
+        align-self: flex-start;
+      }
+      .stats-card:nth-of-type(1) {
+        background: hsl(84, 29%, 55%);
+        align-self: center;
+      }
+      .stats-card:nth-of-type(3) {
+        background: hsl(338, 29%, 55%);
+        align-self: flex-end;
+      }
+
+      .pillar-card {
+        background: #fbf7ea;
+        padding: 24px;
+        border-radius: 12px;
+      }
+
+      .donate-card {
+        background: #f3f4f6;
+        padding: 24px;
+        border-radius: 12px;
+      }
+
+      .team-card {
+        background: #f3f4f6;
+        padding: 24px;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .team-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .pillar-card .icon {
+        font-size: 24px;
+        color: #0096ff;
+        margin-bottom: 16px;
+      }
+
+      .arrow-icon {
+        font-size: 14px;
+        margin-left: 8px;
+      }
+
+      .blue-btn {
+        background: #0096ff;
+        color: white;
+        padding: 12px 32px;
+        border-radius: 24px;
+        display: inline-block;
+        font-weight: 500;
+      }
+
+      .purple-btn {
+        background: #6b2c91;
+        color: white;
+        padding: 12px 32px;
+        border-radius: 24px;
+        display: inline-block;
+        font-weight: 500;
+      }
+
+      .contact-form {
+        border: 2px solid #0096ff;
+        border-radius: 12px;
+        padding: 32px;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="logo-circle">
+        <img src="./assets/images/kenya-map.png" alt="Soleguard Logo" />
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="#" class="nav-link">About us</a>
+        <a href="#" class="nav-link">What we do</a>
+        <a href="#" class="nav-link">Donate</a>
+        <a href="#" class="contact-btn">Contact us</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-12 flex justify-between items-center">
+      <div>
+        <h1 class="text-4xl font-bold mb-6">SOLE GUARD ALLIANCE</h1>
+        <p class="max-w-2xl mb-8 text-gray-700">
+          Soleguard Alliance is a Kenyan-based non-governmental organization
+          (NGO) committed to empowering communities through the eradication of
+          jigger infestations, promoting animal welfare, fostering environmental
+          conservation, and advancing the blue economy.
+        </p>
+        <a href="#" class="blue-btn mb-12">Partner with us</a>
+      </div>
+      <!-- Map of Kenya Image -->
+      <div class="hidden md:block">
+        <img src="./assets/images/kenya-map.png" alt="Map of Kenya" class="w-80 h-auto rounded-lg shadow-lg" />
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="container mx-auto px-6 py-12 bg-gray-50">
+      <div class="flex space-x-8" id="overview-section">
+        <div class="flex space-x-10 mt-12">
+          <div class="stats-card">
+            <div class="text-3xl font-bold">100+</div>
+            <div class="text-sm">partners</div>
+          </div>
+          <div class="stats-card">
+            <div class="text-xl font-bold">EST</div>
+            <div class="text-2xl font-bold">2023</div>
+          </div>
+          <div class="stats-card">
+            <div class="text-3xl font-bold">1000+</div>
+            <div class="text-sm">Places reached</div>
+          </div>
+        </div>
+        <div class="container">
+          <h2 class="text-3xl font-bold mb-8">Overview</h2>
+          <div class="max-w-3xl">
+            <p class="text-gray-700 mb-6">
+              Soleguard Alliance is a Kenyan-based non-governmental organization
+              (NGO) committed to empowering communities through the eradication
+              of jigger infestations, promoting animal welfare, fostering
+              environmental conservation, and advancing the blue economy.
+              Operating from Nairobi, Nairobi, the organization was founded with
+              a vision to build resilient, healthy, and prosperous communities.
+              Soleguard Alliance's work is driven by the belief that sustainable
+              solutions to community challenges can only be achieved through a
+              combination of public awareness, collaboration, and practical
+              interventions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Pillars -->
+    <section class="container mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold mb-8">About us - key pillars</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="pillar-card">
+          <i class="fas fa-bug icon"></i>
+          <h3 class="font-bold mb-2">Jigger Eradication and Public Health</h3>
+          <p class="text-gray-700 mb-4">
+            Jiggers are a pervasive health problem affecting vulnerable populations, especially in rural areas.
+            Soleguard Alliance works to eradicate jigger infestations by promoting awareness,
+            implementing preventive measures, providing treatment, and mobilizing communities to take
+            collective action against this debilitating condition.
+          </p>
+          <div class="text-blue-500 flex items-center">
+            Learn more about Jiggers
+            <i class="fas fa-arrow-right arrow-icon"></i>
+          </div>
+        </div>
+        <div class="pillar-card">
+          <i class="fas fa-paw icon"></i>
+          <h3 class="font-bold mb-2">Animal Welfare</h3>
+          <p class="text-gray-700 mb-4">
+            Soleguard Alliance advocates for the humane treatment of animals and promotes animal welfare
+            by raising awareness, improving veterinary services, and working with communities to ensure
+            proper care for livestock, companion animals, and wildlife.
+          </p>
+          <div class="text-blue-500 flex items-center">
+            Learn more about animal welfare
+            <i class="fas fa-arrow-right arrow-icon"></i>
+          </div>
+        </div>
+        <div class="pillar-card">
+          <i class="fas fa-leaf icon"></i>
+          <h3 class="font-bold mb-2">Environmental Conservation</h3>
+          <p class="text-gray-700 mb-4">
+            Environmental degradation threatens the livelihoods and health of many communities in Kenya.
+            Soleguard Alliance focuses on environmental conservation by promoting sustainable practices,
+            restoring ecosystems, and raising awareness about the importance of protecting natural resources.
+          </p>
+          <div class="text-blue-500 flex items-center">
+            Learn more about environmental conservation
+            <i class="fas fa-arrow-right arrow-icon"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Donate Section -->
+    <section class="container mx-auto px-6 py-12 bg-gray-50">
+      <h2 class="text-3xl font-bold mb-8">Why should you donate</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="donate-card">
+          <h3 class="font-bold mb-4">
+            Your contributions help fund our public health, environmental, animal welfare, and blue economy projects.
+          </h3>
+          <p class="text-gray-700">Real-World projects and community tours</p>
+        </div>
+        <div class="donate-card">
+          <h3 class="font-bold mb-4">
+            Connected to Over 50 Partner Organizations
+          </h3>
+          <p class="text-gray-700">
+            Partner with Us: We are always looking to build new partnerships that align with our mission and values.
+          </p>
+        </div>
+      </div>
+      <div class="mt-6">
+        <div class="donate-card">
+          <h3 class="font-bold mb-4">
+            We have a Diverse and Inclusive Team Dedicated to Your Growth, Including Experienced community leads and mentors.
+          </h3>
+          <p class="text-gray-700">
+            Join us on the ground and contribute your skills to one of our many initiatives.
+          </p>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="#" class="purple-btn">Volunteer or Donate</a>
+      </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="container mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold mb-8">
+        OUR LEADERSHIP STRUCTURE AND DIRECTORS
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="team-card">
+          <img
+            src="./assets/images/kenya-map.png"
+            alt="David Obinda"
+            class="team-img mb-4"
+          />
+          <h3 class="font-bold mb-2">David Obinda Kakunja</h3>
+          <p class="text-gray-700">Managing Director and Founder</p>
+        </div>
+        <div class="team-card">
+          <img
+            src="./assets/images/kenya-map.png"
+            alt="Team Member"
+            class="team-img mb-4"
+          />
+          <h3 class="font-bold mb-2">Victoria Masinde</h3>
+          <p class="text-gray-700">Assistant Director and co-founder</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect with Us Section -->
+    <section class="container mx-auto px-6 py-12 max-w-2xl">
+      <div class="relative bg-white p-8 rounded-2xl" style="border: 4px solid; border-image: linear-gradient(to right, #0096ff, #6b2c91) 1;">
+        <h2 class="text-3xl font-bold text-blue-600 mb-6">Connect with us</h2>
+        <p class="text-gray-700 mb-8 text-lg">
+          Have questions, ideas, or want to get involved? Reach out to us today and become part of our vibrant community.
+        </p>
+        <div class="absolute bottom-4 left-4">
+          <i class="fas fa-phone fa-3x text-orange-500"></i>
+        </div>
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" class="form-input p-4 border border-gray-300 rounded-xl text-lg" placeholder="Your Name" />
+          <input type="email" class="form-input p-4 border border-gray-300 rounded-xl text-lg" placeholder="Your Email" />
+          <textarea class="form-input md:col-span-2 p-4 border border-gray-300 rounded-xl text-lg" rows="4" placeholder="Your question/idea"></textarea>
+          <div class="text-right md:col-span-2">
+            <button type="submit" class="bg-purple-700 hover:bg-purple-800 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 mt-12 py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex justify-between flex-wrap gap-8">
+          <div>
+            <div class="logo-circle mb-4">
+              <img src="./assets/images/kenya-map.png" alt="Soleguard Logo" />
+            </div>
+          </div>
+          <div>
+            <h3 class="font-bold mb-4">Menu</h3>
+            <ul class="space-y-2">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold mb-4">Contact Us</h3>
+            <ul class="space-y-2">
+              <li><i class="fas fa-phone"></i> +254 712345678</li>
+              <li><i class="fas fa-envelope"></i> info@sga.co.ke</li>
+              <li><i class="fas fa-location-dot"></i> Off-Sample Road</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center mt-8">
+          <div>
+            <a href="#" class="text-gray-600 hover:text-gray-900 mr-4"><i class="fab fa-linkedin text-2xl"></i></a>
+            <a href="#" class="text-gray-600 hover:text-gray-900 mr-4"><i class="fab fa-twitter text-2xl"></i></a>
+            <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fab fa-instagram text-2xl"></i></a>
+          </div>
+
+          <div class="text-sm text-gray-500">© Copyright Soleguard 2024</div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
