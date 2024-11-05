@@ -9,11 +9,151 @@
       rel="stylesheet"
     />
     <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       rel="stylesheet"
     />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+      section.key_pillars {
+        padding-block: min(20vh, 2rem);
+        margin-inline: auto;
+      }
+      section.key_pillars a {
+        display: inline-block;
+        text-decoration: none;
+      }
+      section.key_pillars .container {
+        margin-top: 2em;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        gap: 2rem;
+      }
+      section.key_pillars .container .card:nth-child(1) .box .icon .iconBox {
+        background: #e0e340;
+      }
+      section.key_pillars .container .card:nth-child(2) .box .icon .iconBox {
+        background: #e9bc4a;
+      }
+      section.key_pillars .container .card:nth-child(3) .box .icon .iconBox {
+        background: #86e662;
+      }
+      section.key_pillars .container .card ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.625rem;
+      }
+      section.key_pillars .container .card ul li {
+        text-transform: uppercase;
+        background: var(--clr-tag);
+        color: #282828;
+        font-weight: 700;
+        font-size: 0.8rem;
+        padding: 0.375rem 0.625rem;
+        border-radius: 0.188rem;
+      }
+      section.key_pillars .container .card ul .branding {
+        color: #704a31;
+      }
+      section.key_pillars .container .card ul .packaging {
+        color: #1e3938;
+      }
+      section.key_pillars .container .card ul .marketing {
+        color: #4d1637;
+      }
+      section.key_pillars .container .card .content {
+        padding: 0.938rem 0.625rem;
+      }
+      section.key_pillars .container .card .content h3 {
+        text-transform: capitalize;
+        font-size: clamp(1.5rem, 1.3909rem + 0.4364vw, 1.8rem);
+      }
+      section.key_pillars .container .card .content p {
+        margin: 0.625rem 0 1.25rem;
+        color: #565656;
+      }
+      section.key_pillars .container .card-inner {
+        position: relative;
+        width: inherit;
+        height: 18.75rem;
+        background: var(--clr);
+        border-radius: 1.25rem;
+        border-bottom-right-radius: 0;
+        overflow: hidden;
+      }
+      section.key_pillars .container .card-inner .box {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-radius: 1.25rem;
+        overflow: hidden;
+      }
+      section.key_pillars .container .card-inner .box .imgBox {
+        position: absolute;
+        inset: 0;
+      }
+      section.key_pillars .container .card-inner .box .imgBox img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      section.key_pillars .container .card-inner .box .icon {
+        position: absolute;
+        bottom: -0.375rem;
+        right: -0.375rem;
+        width: 6rem;
+        height: 6rem;
+        background: var(--clr);
+        border-top-left-radius: 50%;
+      }
+      section.key_pillars .container .card-inner .box .icon:hover .iconBox {
+        transform: scale(1.1);
+      }
+      section.key_pillars .container .card-inner .box .icon::before {
+        position: absolute;
+        content: "";
+        bottom: 0.375rem;
+        left: -1.25rem;
+        background: transparent;
+        width: 1.25rem;
+        height: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
+        box-shadow: 0.313rem 0.313rem 0 0.313rem #fff;
+      }
+      section.key_pillars .container .card-inner .box .icon::after {
+        position: absolute;
+        content: "";
+        top: -1.25rem;
+        right: 0.375rem;
+        background: transparent;
+        width: 1.25rem;
+        height: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
+        box-shadow: 0.313rem 0.313rem 0 0.313rem var(--clr);
+      }
+      section.key_pillars .container .card-inner .box .icon .iconBox {
+        position: absolute;
+        inset: 0.625rem;
+        background: #282828;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+      }
+      section.key_pillars .container .card-inner .box .icon .iconBox span {
+        color: #fff;
+        font-size: 1.5rem;
+      }
 
       body {
         font-family: "Inter", sans-serif;
@@ -82,7 +222,7 @@
       }
 
       .donate-card {
-        background: #f3f4f6;
+        background: #dee8fc;
         padding: 24px;
         border-radius: 12px;
       }
@@ -143,6 +283,43 @@
         border-radius: 8px;
         margin-bottom: 16px;
       }
+
+      .image-container {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      }
+
+      .text-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        color: white;
+      }
+
+      .text-overlay h3 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>
@@ -151,53 +328,61 @@
       <div class="logo-circle">
         <img src="./assets/images/kenya-map.png" alt="Soleguard Logo" />
       </div>
-      <div class="flex items-center space-x-6">
-        <a href="#" class="nav-link">About us</a>
-        <a href="#" class="nav-link">What we do</a>
-        <a href="#" class="nav-link">Donate</a>
-        <a href="#" class="contact-btn">Contact us</a>
+      <div class="flex items-center space-x-6 text-black text-2xl">
+        <a href="#" class="nav-link hover:text-blue-700">About us</a>
+        <a href="#" class="nav-link hover:text-blue-700">What we do</a>
+        <a href="#" class="nav-link hover:text-blue-700">Donate</a>
+      </div>
+      <div>
+        <a
+          href="#"
+          class="blue-btn text-xl transition-colors duration-300 hover:bg-transparent hover:text-blue-500 hover:border-blue-500 border-2 border-blue-500 rounded-md px-2 py-1 inline-block"
+        >
+          Contact us
+        </a>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="container mx-auto px-6 py-12 flex justify-between items-center">
-      <div>
-        <h1 class="text-4xl font-bold mb-6">SOLE GUARD ALLIANCE</h1>
-        <p class="max-w-2xl mb-8 text-gray-700">
+    <section
+      class="container mx-auto mt-216 px-6 py-12 flex justify-between items-center"
+    >
+      <div class="width-1/2">
+        <h1 class="text-6xl font-bold mb-6 w-3/4 tracking-wide">
+          SOLE GUARD ALLIANCE
+        </h1>
+        <p class="max-w-4xl mb-8 text-gray-500 text-2xl">
           Soleguard Alliance is a Kenyan-based non-governmental organization
           (NGO) committed to empowering communities through the eradication of
           jigger infestations, promoting animal welfare, fostering environmental
           conservation, and further advancing the blue economy.
         </p>
-        <a href="#" class="blue-btn mb-12">Partner with us</a>
+        <a
+          href="#"
+          class="blue-btn mb-12 text-2xl transition-colors duration-300 hover:bg-transparent hover:text-blue-500 hover:border-blue-500 border-2 border-blue-500 rounded-md px-6 py-3 inline-block"
+        >
+          Partner with us
+        </a>
       </div>
-      <!-- Map of Kenya Image -->
-      <div class="hidden md:block">
-        <img src="./assets/images/kenya-map.png" alt="Map of Kenya" class="w-80 h-auto rounded-lg shadow-lg" />
+      <div class="">
+        <img
+          src="./assets/images/dotted-pattern.webp"
+          alt="Map of Kenya"
+          class="w-2/3 h-auto opacity-40 z-[-1] float-right"
+        />
       </div>
     </section>
 
     <!-- Overview Section -->
-    <section class="container mx-auto px-6 py-12 bg-gray-50">
-      <div class="flex space-x-8" id="overview-section">
-        <div class="flex space-x-10 mt-12">
-          <div class="stats-card">
-            <div class="text-3xl font-bold">100+</div>
-            <div class="text-sm">partners</div>
-          </div>
-          <div class="stats-card">
-            <div class="text-xl font-bold">EST</div>
-            <div class="text-2xl font-bold">2023</div>
-          </div>
-          <div class="stats-card">
-            <div class="text-3xl font-bold">1000+</div>
-            <div class="text-sm">Places reached</div>
-          </div>
-        </div>
-        <div class="container">
-          <h2 class="text-3xl font-bold mb-8">Overview</h2>
+    <section class="container mx-auto px-212 w-3/4 py-12">
+      <div class="flex flex-row justify-between" id="overview-section">
+        <img src="./assets/images/stats.png" class="w-1/3" alt="Stats" />
+        <div class="">
+          <h2 class="text-6xl text-blue-500 font-bold mb-6 w-3/4 tracking-wide">
+            Overview
+          </h2>
           <div class="max-w-3xl">
-            <p class="text-gray-700 mb-6">
+            <p class="max-w-6xl mb-8 text-gray-500 text-2xl leading-12">
               Soleguard Alliance is a Kenyan-based non-governmental organization
               (NGO) committed to empowering communities through the eradication
               of jigger infestations, promoting animal welfare, fostering
@@ -215,47 +400,114 @@
     </section>
 
     <!-- Key Pillars -->
-    <section class="container mx-auto px-6 py-12">
-      <h2 class="text-3xl font-bold mb-8">About us - key pillars</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="pillar-card">
-          <i class="fas fa-bug icon"></i>
-          <h3 class="font-bold mb-2">Jigger Eradication and Public Health</h3>
-          <p class="text-gray-700 mb-4">
-            Jiggers are a pervasive health problem affecting vulnerable populations, especially in rural areas.
-            Soleguard Alliance works to eradicate jigger infestations by promoting awareness,
-            implementing preventive measures, providing treatment, and mobilizing communities to take
-            collective action against this debilitating condition.
-          </p>
-          <div class="text-blue-500 flex items-center">
-            Learn more about Jiggers
-            <i class="fas fa-arrow-right arrow-icon"></i>
+    <section class="key_pillars container mx-auto px-6 py-12 mt-16">
+      <h2 class="text-5xl text-blue-500 font-bold mb-6 w-3/4 tracking-wide">
+        Our Key Pillars
+      </h2>
+      <div class="container w-[95%]">
+        <div class="card">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img src="./assets/images/jiggers.jpg" alt="Jiggers Image" />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                    arrow_outward
+                  </span></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <h3 class="text-black">Jigger Eradication and Public Health</h3>
+            <p class="text-xl text-gray-500">
+              Soleguard Alliance addresses jigger infestations in vulnerable
+              rural communities through awareness, prevention, treatment, and
+              community mobilization.
+            </p>
+            <ul>
+              <li style="--clr-tag: #ffef99" class="health-awareness">
+                Awareness
+              </li>
+              <li style="--clr-tag: #a5faa5" class="health-prevention">
+                Prevention
+              </li>
+              <li style="--clr-tag: #f5aa9d" class="health-treatment">
+                Treatment
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="pillar-card">
-          <i class="fas fa-paw icon"></i>
-          <h3 class="font-bold mb-2">Animal Welfare</h3>
-          <p class="text-gray-700 mb-4">
-            Soleguard Alliance advocates for the humane treatment of animals and promotes animal welfare
-            by raising awareness, improving veterinary services, and working with communities to ensure
-            proper care for livestock, companion animals, and wildlife.
-          </p>
-          <div class="text-blue-500 flex items-center">
-            Learn more about animal welfare
-            <i class="fas fa-arrow-right arrow-icon"></i>
+        <div class="card">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="./assets/images/animal.jpg"
+                  alt="Animal Welfare Image"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                    arrow_outward
+                  </span></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <h3 class="text-black">Animal Welfare</h3>
+            <p class="text-xl text-gray-500">
+              We promote animal welfare by advocating humane treatment,
+              improving veterinary services, and partnering with communities.
+            </p>
+            <ul>
+              <li style="--clr-tag: #d9fa89" class="animal-welfare">
+                Livestock
+              </li>
+              <li style="--clr-tag: #fcc8a7" class="animal-welfare">Pets</li>
+              <li style="--clr-tag: #95f5b7" class="animal-welfare">
+                Wildlife
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="pillar-card">
-          <i class="fas fa-leaf icon"></i>
-          <h3 class="font-bold mb-2">Environmental Conservation</h3>
-          <p class="text-gray-700 mb-4">
-            Environmental degradation threatens the livelihoods and health of many communities in Kenya.
-            Soleguard Alliance focuses on environmental conservation by promoting sustainable practices,
-            restoring ecosystems, and raising awareness about the importance of protecting natural resources.
-          </p>
-          <div class="text-blue-500 flex items-center">
-            Learn more about environmental conservation
-            <i class="fas fa-arrow-right arrow-icon"></i>
+        <div class="card">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="./assets/images/plants.jpg"
+                  alt="Environmental Conservation"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                    arrow_outward
+                  </span></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <h3 class="text-black">Environmental Conservation</h3>
+            <p class="text-xl text-gray-500">
+              Combating environmental degradation in Kenya via sustainable
+              practices, ecosystem restoration, and resource protection
+              awareness.
+            </p>
+            <ul>
+              <li style="--clr-tag: #91f291" class="environmental-conservation">
+                Conservation
+              </li>
+              <li style="--clr-tag: #d4f78b" class="sustainability">
+                Sustainable Practices
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -263,81 +515,122 @@
 
     <!-- Why Donate Section -->
     <section class="container mx-auto px-6 py-12 bg-gray-50">
-      <h2 class="text-3xl font-bold mb-8">Why should you donate</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <h2 class="text-5xl font-bold mb-8 text-blue-500">
+        Why should you donate
+      </h2>
+      <div class="flex flex-row gap-8">
         <div class="donate-card">
-          <h3 class="font-bold mb-4">
-            Your contributions help fund our public health, environmental, animal welfare, and blue economy projects.
+          <h3 class="font-bold mb-4 mt-12 text-3xl">
+            Your contributions help fund our public health, environmental,
+            animal welfare, and blue economy projects.
           </h3>
-          <p class="text-gray-700">Real-World projects and community tours</p>
+          <p class="text-gray-700 text-xl">
+            Real-world projects and community tours
+          </p>
         </div>
+        <img
+          src="./assets/images/animal.jpg"
+          class="w-1/4 rounded-3xl"
+          alt="Donate Image"
+        />
         <div class="donate-card">
-          <h3 class="font-bold mb-4">
+          <h3 class="font-bold mb-4 mt-12 text-3xl">
             Connected to Over 50 Partner Organizations
           </h3>
-          <p class="text-gray-700">
-            Partner with Us: We are always looking to build new partnerships that align with our mission and values.
+          <p class="text-gray-700 text-xl">
+            Partner with Us: We are always looking to build new partnerships
+            that align with our mission and values.
           </p>
         </div>
       </div>
-      <div class="mt-6">
+      <div class="mt-6 flex flex-row gap-8">
+        <img
+          src="./assets/images/jiggers.jpg"
+          alt="Donate Image"
+          class="w-1/4 rounded-3xl"
+        />
         <div class="donate-card">
-          <h3 class="font-bold mb-4">
-            We have a Diverse and Inclusive Team Dedicated to Your Growth, Including Experienced community leads and mentors.
+          <h3 class="font-bold mb-4 text-3xl mt-12">
+            We have a Diverse and Inclusive Team Dedicated to Your Growth,
+            Including Experienced community leads and mentors.
           </h3>
-          <p class="text-gray-700">
-            Join us on the ground and contribute your skills to one of our many initiatives.
+          <p class="text-gray-700 text-xl">
+            Join us on the ground and contribute your skills to one of our many
+            initiatives.
           </p>
         </div>
       </div>
       <div class="text-center mt-8">
-        <a href="#" class="purple-btn">Volunteer or Donate</a>
+        <a
+          href="#"
+          class="blue-btn text-xl transition-colors duration-300 hover:bg-transparent hover:text-blue-500 hover:border-blue-500 border-2 border-blue-500 rounded-md px-2 py-1 inline-block"
+        >
+          Volunteer or Donate
+        </a>
       </div>
     </section>
 
     <!-- Leadership Section -->
-    <section class="container mx-auto px-6 py-12">
-      <h2 class="text-3xl font-bold mb-8">
-        OUR LEADERSHIP STRUCTURE AND DIRECTORS
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="team-card">
-          <img
-            src="./assets/images/kenya-map.png"
-            alt="David Obinda"
-            class="team-img mb-4"
-          />
-          <h3 class="font-bold mb-2">David Obinda Kakunja</h3>
-          <p class="text-gray-700">Managing Director and Founder</p>
+    <section class="container mx-auto px-6 py-12 flex flex-row gap-8">
+      <h2 class="text-6xl font-bold leading-normal">OUR LEADERSHIP STRUCTURE AND DIRECTORS</h2>
+      <div class="image-container">
+        <img class="rounded-3xl" src="./assets/images/plants.jpg" alt="Background Image" />
+        <div class="overlay rounded-3xl"></div>
+        <div class="text-overlay">
+          <h3>Name</h3>
+          <p>This is a description of the image</p>
         </div>
-        <div class="team-card">
-          <img
-            src="./assets/images/kenya-map.png"
-            alt="Team Member"
-            class="team-img mb-4"
-          />
-          <h3 class="font-bold mb-2">Victoria Masinde</h3>
-          <p class="text-gray-700">Assistant Director and co-founder</p>
+      </div>
+      <div class="image-container">
+        <img class="rounded-3xl" src="./assets/images/plants.jpg" alt="Background Image" />
+        <div class="overlay rounded-3xl"></div>
+        <div class="text-overlay">
+          <h3>Name</h3>
+          <p>This is a description of the image</p>
         </div>
       </div>
     </section>
 
     <!-- Connect with Us Section -->
-    <section class="container mx-auto px-6 py-12 max-w-2xl">
-      <div class="relative bg-white p-8 rounded-2xl" style="border: 4px solid; border-image: linear-gradient(to right, #0096ff, #6b2c91) 1;">
-        <h2 class="text-3xl font-bold text-blue-600 mb-6">Connect with us</h2>
-        <p class="text-gray-700 mb-8 text-lg">
-          Have questions, ideas, or want to get involved? Reach out to us today and become part of our vibrant community.
-        </p>
-        <div class="absolute bottom-4 left-4">
-          <i class="fas fa-phone fa-3x text-orange-500"></i>
+    <section class="container mx-auto px-6 py-12 max-w-6xl">
+      <div
+        class="relative bg-white p-8 flex flex-row gap-8 justify-between"
+        style="
+          border: 5px solid;
+          border-image: linear-gradient(to right, #0096ff, #6b2c91) 1;
+        "
+      >
+        <div class="w-1/2">
+          <h2 class="text-3xl font-bold text-blue-600 mb-6">Connect with us</h2>
+          <p class="text-gray-500 mb-4 text-3xl">
+            Have questions, ideas, or want to get involved? Reach out to us
+            today and become part of our vibrant community.
+          </p>
+          <div class="absolute bottom-4 left-4">
+            <i class="fas fa-phone fa-3x text-orange-500"></i>
+          </div>
         </div>
         <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="text" class="form-input p-4 border border-gray-300 rounded-xl text-lg" placeholder="Your Name" />
-          <input type="email" class="form-input p-4 border border-gray-300 rounded-xl text-lg" placeholder="Your Email" />
-          <textarea class="form-input md:col-span-2 p-4 border border-gray-300 rounded-xl text-lg" rows="4" placeholder="Your question/idea"></textarea>
+          <input
+            type="text"
+            class="form-input p-4 border border-gray-300 rounded-xl text-lg"
+            placeholder="Your Name"
+          />
+          <input
+            type="email"
+            class="form-input p-4 border border-gray-300 rounded-xl text-lg"
+            placeholder="Your Email"
+          />
+          <textarea
+            class="form-input md:col-span-2 p-4 border border-gray-300 rounded-xl text-lg"
+            rows="4"
+            placeholder="Your question/idea"
+          ></textarea>
           <div class="text-right md:col-span-2">
-            <button type="submit" class="bg-purple-700 hover:bg-purple-800 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-purple-800 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300"
+            >
               Send
             </button>
           </div>
@@ -374,9 +667,15 @@
 
         <div class="flex justify-between items-center mt-8">
           <div>
-            <a href="#" class="text-gray-600 hover:text-gray-900 mr-4"><i class="fab fa-linkedin text-2xl"></i></a>
-            <a href="#" class="text-gray-600 hover:text-gray-900 mr-4"><i class="fab fa-twitter text-2xl"></i></a>
-            <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="#" class="text-gray-600 hover:text-gray-900 mr-4"
+              ><i class="fab fa-linkedin text-2xl"></i
+            ></a>
+            <a href="#" class="text-gray-600 hover:text-gray-900 mr-4"
+              ><i class="fab fa-twitter text-2xl"></i
+            ></a>
+            <a href="#" class="text-gray-600 hover:text-gray-900"
+              ><i class="fab fa-instagram text-2xl"></i
+            ></a>
           </div>
 
           <div class="text-sm text-gray-500">© Copyright Soleguard 2024</div>
