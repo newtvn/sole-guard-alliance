@@ -320,20 +320,388 @@
         font-weight: bold;
         margin-bottom: 10px;
       }
+
+      /* RESPONSIVE CSS */
+      /* Base styles */
+      .nav-container {
+        position: relative;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 10;
+      }
+
+      .hamburger span {
+        width: 100%;
+        height: 2px;
+        background: #000;
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Make middle line shorter */
+      .hamburger span:nth-child(2) {
+        width: 70%;
+        align-self: flex-end;
+      }
+
+      /* Hamburger to X transformation */
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        width: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+
+      /* Mobile menu styles */
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        z-index: 3;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .mobile-menu.active {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      /* Media queries */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        /* Hide desktop navigation items */
+        nav > div:nth-child(2),
+        nav > div:nth-child(3) {
+          display: none;
+        }
+      }
+
+      /* Hero section base styles */
+      .hero-section {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        width: 50%;
+        z-index: 2;
+      }
+
+      .hero-image {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      /* Media query for mobile devices */
+      @media (max-width: 768px) {
+        .hero-section {
+          flex-direction: column;
+          text-align: center;
+          min-height: 80vh;
+          position: relative;
+        }
+
+        .hero-content {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 2rem 1rem;
+        }
+
+        .hero-content h1 {
+          width: 100%;
+          font-size: 2.5rem; /* Adjust heading size for mobile */
+        }
+
+        .hero-content p {
+          font-size: 1.25rem; /* Adjust paragraph size for mobile */
+        }
+
+        .hero-btn {
+          font-size: 1.25rem; /* Smaller button text */
+          padding: 0.75rem 1.5rem; /* Smaller button padding */
+        }
+
+        .hero-image {
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 90%;
+          height: 90%;
+          z-index: 1;
+        }
+
+        .hero-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          opacity: 0.1; /* 10% opacity */
+        }
+
+        /* Ensure text remains readable over the background image */
+        .hero-content * {
+          position: relative;
+          z-index: 2;
+        }
+      }
+      /* Grid layout container */
+      .donate-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Card styles */
+      .donate-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* Image container for aspect ratio */
+      .donate-image-container {
+        position: relative;
+        width: 100%;
+        padding-top: 75%; /* 4:3 aspect ratio */
+        overflow: hidden;
+      }
+
+      .donate-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .donate-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+
+        /* First row: card and image */
+        .donate-card:first-child {
+          grid-column: 1;
+        }
+
+        .donate-image-container:first-of-type {
+          grid-column: 2;
+        }
+
+        /* Middle card takes full width */
+        .middle-card {
+          grid-column: 1 / -1;
+        }
+
+        /* Last row: image and card */
+        .donate-image-container:last-of-type {
+          grid-column: 1;
+        }
+
+        .donate-card:last-of-type {
+          grid-column: 2;
+        }
+
+        /* Reduce text sizes on mobile */
+        .donate-card h3 {
+          font-size: 1.5rem;
+          margin-top: 0.5rem;
+        }
+
+        .donate-card p {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 2.5rem;
+        }
+      }
+
+      /* Even smaller screens */
+      @media (max-width: 640px) {
+        .donate-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        /* Reset all grid items to full width */
+        .donate-card,
+        .donate-image-container,
+        .middle-card {
+          grid-column: 1 / -1;
+        }
+
+        /* Maintain aspect ratio for images */
+        .donate-image-container {
+          padding-top: 75%;
+        }
+      }
+      /* Leadership section styles */
+      .leadership-section {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: flex-start;
+      }
+
+      .leadership-section h2 {
+        flex: 1;
+      }
+
+      .leadership-grid {
+        flex: 2;
+        display: flex;
+        gap: 2rem;
+      }
+
+      .image-container {
+        position: relative;
+        flex: 1;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      .text-overlay {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        color: white;
+      }
+
+      .text-overlay h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .leadership-section {
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .leadership-section h2 {
+          font-size: 2.5rem; /* Reduced heading size */
+          text-align: center;
+          line-height: 1.2;
+        }
+
+        .leadership-grid {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .image-container {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        /* Optional: adjust image container max-width for better mobile appearance */
+        .image-container {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+
+        .text-overlay {
+          bottom: 1.5rem;
+          left: 1.5rem;
+        }
+
+        .text-overlay h3 {
+          font-size: 1.25rem;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <nav
+      class="container mx-auto px-6 py-4 flex justify-between items-center nav-container"
+    >
       <div class="logo-circle">
         <img src="./assets/images/kenya-map.png" alt="Soleguard Logo" />
       </div>
-      <div class="flex items-center space-x-6 text-black text-2xl">
+
+      <!-- Hamburger Menu -->
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Desktop Menu -->
+      <div class="flex items-center space-x-6 text-black text-2xl nav-links">
         <a href="#" class="nav-link hover:text-blue-700">About us</a>
         <a href="#" class="nav-link hover:text-blue-700">What we do</a>
         <a href="#" class="nav-link hover:text-blue-700">Donate</a>
       </div>
-      <div>
+
+      <div class="nav-links">
+        <a
+          href="#"
+          class="blue-btn text-xl transition-colors duration-300 hover:bg-transparent hover:text-blue-500 hover:border-blue-500 border-2 border-blue-500 rounded-md px-2 py-1 inline-block"
+        >
+          Contact us
+        </a>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <a href="#" class="nav-link hover:text-blue-700">About us</a>
+        <a href="#" class="nav-link hover:text-blue-700">What we do</a>
+        <a href="#" class="nav-link hover:text-blue-700">Donate</a>
         <a
           href="#"
           class="blue-btn text-xl transition-colors duration-300 hover:bg-transparent hover:text-blue-500 hover:border-blue-500 border-2 border-blue-500 rounded-md px-2 py-1 inline-block"
@@ -344,10 +712,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section
-      class="container mx-auto mt-216 px-6 py-12 flex justify-between items-center"
-    >
-      <div class="width-1/2">
+    <section class="hero-section container mx-auto mt-216 px-6 py-12">
+      <div class="hero-content">
         <h1 class="text-6xl font-bold mb-6 w-3/4 tracking-wide">
           SOLEGUARD ALLIANCE
         </h1>
@@ -359,16 +725,16 @@
         </p>
         <a
           href="#"
-          class="blue-btn mb-12 text-2xl transition-colors duration-300 hover:bg-transparent hover:text-blue-500 hover:border-blue-500 border-2 border-blue-500 rounded-md px-6 py-3 inline-block"
+          class="hero-btn blue-btn mb-12 text-2xl transition-colors duration-300 hover:bg-transparent hover:text-blue-500 hover:border-blue-500 border-2 border-blue-500 rounded-md px-6 py-3 inline-block"
         >
           Partner with us
         </a>
       </div>
-      <div class="">
+      <div class="hero-image">
         <img
           src="./assets/images/dotted-pattern.webp"
           alt="Map of Kenya"
-          class="w-2/3 h-auto opacity-40 z-[-1] float-right"
+          class="w-2/3 h-auto opacity-40"
         />
       </div>
     </section>
@@ -518,7 +884,8 @@
       <h2 class="text-5xl font-bold mb-8 text-blue-500">
         Why should you donate
       </h2>
-      <div class="flex flex-row gap-8">
+      <div class="donate-grid">
+        <!-- First Row -->
         <div class="donate-card">
           <h3 class="font-bold mb-4 mt-12 text-3xl">
             Your contributions help fund our public health, environmental,
@@ -528,12 +895,17 @@
             Real-world projects and community tours
           </p>
         </div>
-        <img
-          src="./assets/images/animal.jpg"
-          class="w-1/4 rounded-3xl"
-          alt="Donate Image"
-        />
-        <div class="donate-card">
+
+        <div class="donate-image-container">
+          <img
+            src="./assets/images/animal.jpg"
+            class="donate-image rounded-3xl"
+            alt="Donate Image"
+          />
+        </div>
+
+        <!-- Middle Card (Own Row on Mobile) -->
+        <div class="donate-card middle-card">
           <h3 class="font-bold mb-4 mt-12 text-3xl">
             Connected to Over 50 Partner Organizations
           </h3>
@@ -542,13 +914,16 @@
             that align with our mission and values.
           </p>
         </div>
-      </div>
-      <div class="mt-6 flex flex-row gap-8">
-        <img
-          src="./assets/images/jiggers.jpg"
-          alt="Donate Image"
-          class="w-1/4 rounded-3xl"
-        />
+
+        <!-- Last Row -->
+        <div class="donate-image-container">
+          <img
+            src="./assets/images/jiggers.jpg"
+            alt="Donate Image"
+            class="donate-image rounded-3xl"
+          />
+        </div>
+
         <div class="donate-card">
           <h3 class="font-bold mb-4 text-3xl mt-12">
             We have a Diverse and Inclusive Team Dedicated to Your Growth,
@@ -560,6 +935,7 @@
           </p>
         </div>
       </div>
+
       <div class="text-center mt-8">
         <a
           href="#"
@@ -571,22 +947,34 @@
     </section>
 
     <!-- Leadership Section -->
-    <section class="container mx-auto px-6 py-12 flex flex-row gap-8">
-      <h2 class="text-6xl font-bold leading-normal">OUR LEADERSHIP STRUCTURE AND DIRECTORS</h2>
-      <div class="image-container">
-        <img class="rounded-3xl" src="./assets/images/kenya-map.png" alt="Background Image" />
-        <div class="overlay rounded-3xl"></div>
-        <div class="text-overlay">
-          <h3>Kevin Kirimi</h3>
-          <p>Company Director</p>
+    <section class="container mx-auto px-6 py-12 leadership-section">
+      <h2 class="text-6xl font-bold leading-normal">
+        OUR LEADERSHIP STRUCTURE AND DIRECTORS
+      </h2>
+      <div class="leadership-grid">
+        <div class="image-container">
+          <img
+            class="rounded-3xl"
+            src="./assets/images/kenya-map.png"
+            alt="Background Image"
+          />
+          <div class="overlay rounded-3xl"></div>
+          <div class="text-overlay">
+            <h3>Kevin Kirimi</h3>
+            <p>Company Director</p>
+          </div>
         </div>
-      </div>
-      <div class="image-container">
-        <img class="rounded-3xl" src="./assets/images/kenya-map.png" alt="Background Image" />
-        <div class="overlay rounded-3xl"></div>
-        <div class="text-overlay">
-          <h3>Daniel Okumu</h3>
-          <p>Assistant Director</p>
+        <div class="image-container">
+          <img
+            class="rounded-3xl"
+            src="./assets/images/kenya-map.png"
+            alt="Background Image"
+          />
+          <div class="overlay rounded-3xl"></div>
+          <div class="text-overlay">
+            <h3>Daniel Okumu</h3>
+            <p>Assistant Director</p>
+          </div>
         </div>
       </div>
     </section>
@@ -659,7 +1047,9 @@
             <h3 class="font-bold mb-4">Contact Us</h3>
             <ul class="space-y-2">
               <li><i class="fas fa-phone"></i> +254110952788</li>
-              <li><i class="fas fa-envelope"></i> soleguardalliance@gmail.com</li>
+              <li>
+                <i class="fas fa-envelope"></i> soleguardalliance@gmail.com
+              </li>
               <li><i class="fas fa-location-dot"></i> Nairobi</li>
             </ul>
           </div>
@@ -683,4 +1073,31 @@
       </div>
     </footer>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.querySelector(".hamburger");
+      const mobileMenu = document.querySelector(".mobile-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("active");
+        }
+      });
+
+      // Close mobile menu when window is resized above mobile breakpoint
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("active");
+        }
+      });
+    });
+  </script>
 </html>
